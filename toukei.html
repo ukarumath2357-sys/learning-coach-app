@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>統計検定2級 1か月対策ページ</title>
+  <style>
+    :root {
+      --bg: #f5f8ff;
+      --card: #ffffff;
+      --main: #3f7cff;
+      --main-dark: #2459c9;
+      --sub: #eef4ff;
+      --accent: #ffb84d;
+      --green: #4caf7d;
+      --red: #f26d6d;
+      --text: #223047;
+      --muted: #65748b;
+      --line: #dce6f8;
+      --shadow: 0 12px 30px rgba(40, 80, 160, 0.12);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", "Yu Gothic UI", Meiryo, sans-serif;
+      background: linear-gradient(180deg, #edf5ff 0%, #f8fbff 45%, #ffffff 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 24px 0 60px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4d83ff 0%, #79b7ff 50%, #b5e4ff 100%);
+      color: #fff;
+      border-radius: 32px;
+      padding: 34px 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -70px;
+      top: -80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.24);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      left: -70px;
+      bottom: -90px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 54px);
+      line-height: 1.14;
+      margin: 0 0 14px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      font-size: 17px;
+      margin: 0;
+      max-width: 680px;
+      font-weight: 600;
+    }
+
+    .hero-score {
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      backdrop-filter: blur(8px);
+      border-radius: 26px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .hero-score .num {
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .hero-score .label {
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 26px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245, 248, 255, 0.88);
+      backdrop-filter: blur(8px);
+      padding: 12px 0;
+    }
+
+    .nav a {
+      color: var(--main-dark);
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 5px 14px rgba(50, 80, 130, 0.08);
+    }
+
+    section {
+      margin: 24px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px;
+      font-size: 25px;
+      line-height: 1.35;
+    }
+
+    .icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      background: var(--sub);
+      color: var(--main-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      color: var(--main-dark);
+    }
+
+    .card p {
+      margin: 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff7e6;
+      color: #8a5600;
+      border: 1px solid #ffe2a7;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .priority-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .priority-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 13px;
+    }
+
+    .rank {
+      width: 32px;
+      height: 32px;
+      border-radius: 11px;
+      background: var(--main);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .week {
+      border-left: 7px solid var(--main);
+      position: relative;
+    }
+
+    .week:nth-child(2) { border-left-color: #6fb3ff; }
+    .week:nth-child(3) { border-left-color: #4caf7d; }
+    .week:nth-child(4) { border-left-color: #ffb84d; }
+
+    .week-title {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: var(--main-dark);
+    }
+
+    .mini {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      background: var(--sub);
+      border: 1px solid var(--line);
+      color: var(--main-dark);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    th {
+      background: #eef4ff;
+      color: var(--main-dark);
+      font-weight: 900;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .formula-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .formula {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 13px;
+    }
+
+    .formula strong {
+      color: var(--main-dark);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .formula-text {
+      min-height: 52px;
+    }
+
+    .example-btn {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: var(--main-dark);
+      border: 1px solid var(--line);
+      font-weight: 900;
+      padding: 7px 12px;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 5px 12px rgba(50, 80, 130, 0.08);
+    }
+
+    .modal-bg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 35, 60, 0.48);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .modal-bg.show {
+      display: flex;
+    }
+
+    .modal {
+      width: min(720px, 100%);
+      max-height: 86vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 26px;
+      box-shadow: 0 24px 70px rgba(20, 35, 70, 0.28);
+      border: 1px solid var(--line);
+      padding: 22px;
+      position: relative;
+    }
+
+    .modal h3 {
+      margin: 0 42px 12px 0;
+      color: var(--main-dark);
+      font-size: 24px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f8fbff;
+      color: var(--main-dark);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .modal-block {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .modal-block strong {
+      color: var(--main-dark);
+    }
+
+    .modal-step {
+      padding-left: 20px;
+      margin: 8px 0 0;
+    }
+
+    .question {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .q-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .q-num {
+      font-weight: 900;
+      color: var(--main-dark);
+      font-size: 18px;
+    }
+
+    .q-field {
+      font-size: 12px;
+      font-weight: 900;
+      color: #8a5600;
+      background: #fff7e6;
+      border: 1px solid #ffe2a7;
+      border-radius: 999px;
+      padding: 4px 9px;
+      white-space: nowrap;
+    }
+
+    .choices {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .choice {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 9px 11px;
+      font-weight: 700;
+    }
+
+    .answer-toggle {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      background: var(--main);
+      color: #fff;
+      font-weight: 900;
+      padding: 8px 14px;
+      cursor: pointer;
+      margin-top: 12px;
+      box-shadow: 0 8px 16px rgba(63, 124, 255, 0.22);
+    }
+
+    .answer {
+      display: none;
+      background: #f0fff7;
+      border: 1px solid #bfe9d2;
+      border-radius: 14px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+
+    .answer.show {
+      display: block;
+    }
+
+    .answer strong {
+      color: #1d7b50;
+    }
+
+    .note {
+      background: #fffaf0;
+      border: 1px solid #ffe3a6;
+      color: #5b4214;
+      border-radius: 18px;
+      padding: 15px;
+      font-weight: 700;
+    }
+
+    .checklist {
+      padding-left: 0;
+      list-style: none;
+      margin: 0;
+      display: grid;
+      gap: 9px;
+    }
+
+    .checklist li {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-weight: 700;
+    }
+
+    .footer-message {
+      text-align: center;
+      background: linear-gradient(135deg, #eef4ff, #ffffff);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 24px;
+      margin-top: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .curriculum-page {
+      margin-top: 42px;
+      padding-top: 26px;
+      border-top: 3px dashed var(--line);
+    }
+
+    .curriculum-hero {
+      background: linear-gradient(135deg, #fff7e6 0%, #ffffff 62%, #eef4ff 100%);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    .curriculum-hero h2 {
+      margin: 0 0 8px;
+      color: var(--main-dark);
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.25;
+    }
+
+    .lesson-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lesson-card::after {
+      content: "";
+      position: absolute;
+      right: -34px;
+      top: -34px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: rgba(63, 124, 255, 0.08);
+    }
+
+    .lesson-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--main);
+      color: #fff;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .lesson-card h3 {
+      position: relative;
+      z-index: 1;
+      font-size: 21px;
+    }
+
+    .lesson-list {
+      padding-left: 18px;
+      margin: 8px 0 0;
+    }
+
+    .lesson-list li {
+      margin: 4px 0;
+    }
+
+    .teacher-note {
+      background: #f0fff7;
+      border: 1px solid #bfe9d2;
+      border-radius: 16px;
+      padding: 12px;
+      margin-top: 12px;
+      font-weight: 700;
+      color: #245b42;
+    }
+
+    .homework-box {
+      background: #fffaf0;
+      border: 1px solid #ffe3a6;
+      border-radius: 16px;
+      padding: 12px;
+      margin-top: 12px;
+      color: #5b4214;
+      font-weight: 700;
+    }
+
+    .footer-message h2 {
+      margin: 0 0 8px;
+      color: var(--main-dark);
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .span-4, .span-6, .span-8, .span-12 {
+        grid-column: span 12;
+      }
+
+      .formula-box, .choices {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        position: static;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .nav, .answer-toggle {
+        display: none;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .hero, .card, .footer-message {
+        box-shadow: none;
+      }
+
+      .answer {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">1か月短期集中プラン</div>
+          <h1>統計検定2級<br>合格ライン突破対策</h1>
+          <p>満点を狙うより、頻出分野を絞って60点以上を狙う。推定・検定・確率分布・回帰分析を中心に、要点と問題演習で仕上げます。</p>
+        </div>
+        <div class="hero-score">
+          <div class="num">60%</div>
+          <div class="label">合格ラインの目安</div>
+          <p class="mini">基本問題＋頻出問題を確実に取る</p>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="ページ内メニュー">
+      <a href="#strategy">作戦</a>
+      <a href="#plan">1か月計画</a>
+      <a href="#topics">頻出分野</a>
+      <a href="#formulas">公式・考え方</a>
+      <a href="#questions">練習問題</a>
+      <a href="#final">直前チェック</a>
+      <a href="#curriculum">指導カリキュラム</a>
+    </nav>
+
+    <section id="strategy">
+      <h2 class="section-title"><span class="icon">1</span>合格するための基本作戦</h2>
+      <div class="grid">
+        <div class="card span-4">
+          <div class="tag">作戦1</div>
+          <h3>全部を完璧にしない</h3>
+          <p>統計検定2級は範囲が広いので、1か月では優先順位が重要です。まずは頻出分野で得点できる状態を作ります。</p>
+        </div>
+        <div class="card span-4">
+          <div class="tag">作戦2</div>
+          <h3>問題から逆算する</h3>
+          <p>参考書を最初から読むだけでは時間が足りません。問題を解き、分からない単元だけ戻って確認します。</p>
+        </div>
+        <div class="card span-4">
+          <div class="tag">作戦3</div>
+          <h3>公式を選ぶ練習をする</h3>
+          <p>差がつくのは計算よりも「これは推定か、検定か」「正規分布か、t分布か」を判断する力です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plan">
+      <h2 class="section-title"><span class="icon">2</span>1か月の学習計画</h2>
+      <div class="grid">
+        <div class="card span-6 week">
+          <div class="week-title">1週目：基礎と確率</div>
+          <p>平均・分散・標準偏差・相関係数・確率・条件付き確率を確認します。</p>
+          <div class="pill-list">
+            <span class="pill">平均</span><span class="pill">分散</span><span class="pill">標準偏差</span><span class="pill">条件付き確率</span><span class="pill">期待値</span>
+          </div>
+        </div>
+        <div class="card span-6 week">
+          <div class="week-title">2週目：確率分布・推定</div>
+          <p>二項分布・正規分布・標本平均・信頼区間を中心に固めます。</p>
+          <div class="pill-list">
+            <span class="pill">二項分布</span><span class="pill">正規分布</span><span class="pill">標準化</span><span class="pill">標準誤差</span><span class="pill">信頼区間</span>
+          </div>
+        </div>
+        <div class="card span-6 week">
+          <div class="week-title">3週目：仮説検定・回帰分析</div>
+          <p>p値、有意水準、t検定、カイ二乗検定、回帰直線、決定係数を練習します。</p>
+          <div class="pill-list">
+            <span class="pill">p値</span><span class="pill">有意水準</span><span class="pill">t検定</span><span class="pill">カイ二乗検定</span><span class="pill">回帰分析</span>
+          </div>
+        </div>
+        <div class="card span-6 week">
+          <div class="week-title">4週目：過去問・模擬演習</div>
+          <p>時間を測って演習します。間違えた問題は「公式不足」「判断ミス」「計算ミス」に分類します。</p>
+          <div class="pill-list">
+            <span class="pill">90分演習</span><span class="pill">間違い直し</span><span class="pill">公式確認</span><span class="pill">時間配分</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="topics">
+      <h2 class="section-title"><span class="icon">3</span>過去問でよく出る分野</h2>
+      <div class="card">
+        <ul class="priority-list">
+          <li><span class="rank">1</span><div><strong>推定・信頼区間</strong><br>母平均・母比率の信頼区間、標準誤差、不偏推定量が重要です。</div></li>
+          <li><span class="rank">2</span><div><strong>仮説検定</strong><br>帰無仮説、対立仮説、有意水準、p値、棄却の判断が頻出です。</div></li>
+          <li><span class="rank">3</span><div><strong>確率分布</strong><br>二項分布、正規分布、t分布、カイ二乗分布の使い分けを練習します。</div></li>
+          <li><span class="rank">4</span><div><strong>相関・回帰分析</strong><br>相関係数、回帰式、回帰係数、決定係数、残差の意味を押さえます。</div></li>
+          <li><span class="rank">5</span><div><strong>データの要約</strong><br>平均、中央値、分散、標準偏差、箱ひげ図は取りやすい得点源です。</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="formulas">
+      <h2 class="section-title"><span class="icon">4</span>最低限押さえる言葉・公式・使う場面</h2>
+      <div class="card">
+        <div class="formula-box">
+          <div class="formula">
+            <div class="formula-text"><strong>分散</strong><b>意味：</b>データが平均からどれくらい散らばっているか。<br><b>公式：</b>平均との差を2乗して平均する。<br><b>使う場面：</b>ばらつきの大きさを比べたいとき。<br><b>イメージ：</b>点数が平均の近くに集まっているか、バラバラかを見る。</div>
+            <button class="example-btn" onclick="openExample('variance')">例題・考え方</button>
+          </div>
+          <div class="formula">
+            <div class="formula-text"><strong>標準偏差</strong><b>意味：</b>平均からどれくらい離れているかの目安。<br><b>公式：</b>標準偏差 = √分散。<br><b>使う場面：</b>ばらつきを元の単位で見たいとき。<br><b>イメージ：</b>平均との差の「ふつうのズレ幅」。</div>
+            <button class="example-btn" onclick="openExample('sd')">例題・考え方</button>
+          </div>
+          <div class="formula">
+            <div class="formula-text"><strong>標準化</strong><b>意味：</b>ある値が平均から標準偏差何個分離れているかを表す。<br><b>公式：</b>z = (x − 平均) ÷ 標準偏差。<br><b>使う場面：</b>正規分布の確率を求めるとき、異なるデータを比べるとき。<br><b>イメージ：</b>点数を「平均からどれくらい上か下か」に変換する。</div>
+            <button class="example-btn" onclick="openExample('zscore')">例題・考え方</button>
+          </div>
+          <div class="formula">
+            <div class="formula-text"><strong>標準誤差</strong><b>意味：</b>標本平均がどれくらいブレるかを表す。<br><b>公式：</b>標準誤差 = 標準偏差 ÷ √n。<br><b>使う場面：</b>母平均を推定するとき、信頼区間を作るとき。<br><b>イメージ：</b>アンケート結果がどれくらい信用できるかのブレ幅。</div>
+            <button class="example-btn" onclick="openExample('se')">例題・考え方</button>
+          </div>
+          <div class="formula">
+            <div class="formula-text"><strong>95%信頼区間</strong><b>意味：</b>母平均や母比率がこのあたりにありそう、という範囲。<br><b>公式：</b>推定値 ± 1.96 × 標準誤差。<br><b>使う場面：</b>標本から母集団の値を推定するとき。<br><b>イメージ：</b>1つの数字で決め打ちせず、「だいたいこの範囲」と幅で考える。</div>
+            <button class="example-btn" onclick="openExample('ci')">例題・考え方</button>
+          </div>
+          <div class="formula">
+            <div class="formula-text"><strong>p値の判断</strong><b>意味：</b>帰無仮説が正しいとしたとき、今回の結果がどれくらい珍しいか。<br><b>公式：</b>p値 ＜ 有意水準なら、帰無仮説を棄却する。<br><b>使う場面：</b>仮説検定で、差や関係があると言えるか判断するとき。<br><b>イメージ：</b>「偶然にしては珍しすぎる？」を判断する数字。</div>
+            <button class="example-btn" onclick="openExample('pvalue')">例題・考え方</button>
+          </div>
+          <div class="formula">
+            <div class="formula-text"><strong>決定係数</strong><b>意味：</b>回帰式がデータの変動をどれくらい説明できているか。<br><b>公式：</b>決定係数 = 相関係数²。単回帰では R² = r²。<br><b>使う場面：</b>回帰分析で、予測式の当てはまりのよさを見るとき。<br><b>イメージ：</b>その式でどれくらい説明できているかの割合。</div>
+            <button class="example-btn" onclick="openExample('r2')">例題・考え方</button>
+          </div>
+          <div class="formula">
+            <div class="formula-text"><strong>相関係数</strong><b>意味：</b>2つのデータの関係の強さと向きを表す。<br><b>公式：</b>r = 共分散 ÷ (xの標準偏差 × yの標準偏差)。<br><b>使う場面：</b>2つの量に関係がありそうかを見るとき。<br><b>イメージ：</b>一方が増えると、もう一方も増えるのか、減るのかを見る。</div>
+            <button class="example-btn" onclick="openExample('corr')">例題・考え方</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="questions">
+      <h2 class="section-title"><span class="icon">5</span>練習問題</h2>
+      <div class="note">まずは答えを隠して解いてください。解いた後に「答えを見る」を押すと、答えと考え方が表示されます。</div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題1</div><div class="q-field">データの要約</div></div>
+        <p>データ 2, 4, 6, 8, 10 の平均として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 4</div><div class="choice">B. 5</div><div class="choice">C. 6</div><div class="choice">D. 8</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 6</strong><br>平均は、合計30をデータの個数5で割るので、30 ÷ 5 = 6です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題2</div><div class="q-field">標準化</div></div>
+        <p>平均50、標準偏差10のデータで、値70を標準化したz値として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 1</div><div class="choice">B. 2</div><div class="choice">C. 5</div><div class="choice">D. 7</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 2</strong><br>z = (70 − 50) ÷ 10 = 2です。平均より標準偏差2個分高いという意味です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題3</div><div class="q-field">二項分布</div></div>
+        <p>成功確率0.5の試行を3回行うとき、ちょうど2回成功する確率として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 1/8</div><div class="choice">B. 2/8</div><div class="choice">C. 3/8</div><div class="choice">D. 4/8</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 3/8</strong><br>3回中2回成功する並び方は3通り。各確率は0.5³ = 1/8なので、3 × 1/8 = 3/8です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題4</div><div class="q-field">信頼区間</div></div>
+        <p>標本平均が100、標準誤差が5のとき、母平均の95%信頼区間を近似的に求める式として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 100 ± 1.96 × 5</div><div class="choice">B. 100 ± 5 ÷ 1.96</div><div class="choice">C. 100 × 1.96 ± 5</div><div class="choice">D. 100 ÷ 5 ± 1.96</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 100 ± 1.96 × 5</strong><br>95%信頼区間は、推定値 ± 1.96 × 標準誤差で考えます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題5</div><div class="q-field">仮説検定</div></div>
+        <p>p値が0.03、有意水準が5%のとき、判断として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 帰無仮説を棄却する</div><div class="choice">B. 帰無仮説を必ず正しいとする</div><div class="choice">C. 有意水準を10%に変える</div><div class="choice">D. 判断できない</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 帰無仮説を棄却する</strong><br>p値0.03は有意水準0.05より小さいため、帰無仮説を棄却します。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題6</div><div class="q-field">検定の種類</div></div>
+        <p>性別と好きな科目に関連があるかを調べたいとき、適切な検定として最も近いものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 平均の差のt検定</div><div class="choice">B. カイ二乗検定</div><div class="choice">C. 単回帰分析</div><div class="choice">D. 標準化</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. カイ二乗検定</strong><br>カテゴリ同士の関連を見るときは、カイ二乗検定の独立性の検定を使います。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題7</div><div class="q-field">回帰分析</div></div>
+        <p>回帰式 y = 3x + 2 のとき、xが1増えるとyはどのように変化するか。</p>
+        <div class="choices"><div class="choice">A. 1増える</div><div class="choice">B. 2増える</div><div class="choice">C. 3増える</div><div class="choice">D. 5増える</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 3増える</strong><br>回帰式のxの係数3は、xが1増えたときにyが平均的に3増えることを表します。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題8</div><div class="q-field">決定係数</div></div>
+        <p>決定係数が0.64のとき、説明として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 64%の変動を説明している</div><div class="choice">B. 相関係数は必ず0.64である</div><div class="choice">C. 残差は必ず0である</div><div class="choice">D. 平均が64である</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 64%の変動を説明している</strong><br>決定係数は、回帰式が目的変数の変動をどの程度説明できているかを示します。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題9</div><div class="q-field">標本調査</div></div>
+        <p>母集団を地域ごとに分け、それぞれの地域から無作為に標本を選ぶ方法として最も近いものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 単純無作為抽出</div><div class="choice">B. 層化抽出</div><div class="choice">C. 系統抽出</div><div class="choice">D. 全数調査</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 層化抽出</strong><br>地域などの層に分けて、それぞれから標本を選ぶ方法を層化抽出といいます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題10</div><div class="q-field">相関</div></div>
+        <p>相関係数が−0.9のとき、説明として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 強い正の相関がある</div><div class="choice">B. 強い負の相関がある</div><div class="choice">C. 相関はほとんどない</div><div class="choice">D. 必ず因果関係がある</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 強い負の相関がある</strong><br>相関係数は−1に近いほど強い負の相関を表します。ただし、相関があっても因果関係があるとは限りません。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題11</div><div class="q-field">中央値</div></div>
+        <p>データ 3, 7, 2, 9, 4 の中央値として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 3</div><div class="choice">B. 4</div><div class="choice">C. 5</div><div class="choice">D. 7</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 4</strong><br>小さい順に並べると 2, 3, 4, 7, 9。真ん中の値は4です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題12</div><div class="q-field">四分位範囲</div></div>
+        <p>第1四分位数が10、第3四分位数が22のとき、四分位範囲として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 10</div><div class="choice">B. 12</div><div class="choice">C. 22</div><div class="choice">D. 32</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 12</strong><br>四分位範囲は、第3四分位数−第1四分位数なので、22−10=12です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題13</div><div class="q-field">分散</div></div>
+        <p>データ 2, 4, 6 の平均は4である。このデータの分散として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 2/3</div><div class="choice">B. 4/3</div><div class="choice">C. 8/3</div><div class="choice">D. 4</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 8/3</strong><br>平均との差は −2, 0, 2。2乗すると4, 0, 4。平均して (4+0+4)÷3 = 8/3です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題14</div><div class="q-field">標準偏差</div></div>
+        <p>分散が16のとき、標準偏差として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 2</div><div class="choice">B. 4</div><div class="choice">C. 8</div><div class="choice">D. 16</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 4</strong><br>標準偏差は分散の平方根なので、√16=4です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題15</div><div class="q-field">偏差値</div></div>
+        <p>平均50、標準偏差10のテストで70点を取った。この点数の偏差値として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 55</div><div class="choice">B. 60</div><div class="choice">C. 65</div><div class="choice">D. 70</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：D. 70</strong><br>z=(70−50)÷10=2。偏差値は 50+10z なので、50+20=70です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題16</div><div class="q-field">確率</div></div>
+        <p>サイコロを1回投げるとき、偶数の目が出る確率として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 1/6</div><div class="choice">B. 1/3</div><div class="choice">C. 1/2</div><div class="choice">D. 2/3</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 1/2</strong><br>偶数は2,4,6の3通り。全体は6通りなので、3/6=1/2です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題17</div><div class="q-field">条件付き確率</div></div>
+        <p>あるクラスで男子は20人、女子は30人である。女子のうちメガネをかけている人は6人である。女子であると分かっているとき、その人がメガネをかけている確率として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 6/50</div><div class="choice">B. 6/30</div><div class="choice">C. 30/50</div><div class="choice">D. 20/30</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 6/30</strong><br>「女子である」と条件が決まっているので、分母は女子30人。そのうちメガネは6人です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題18</div><div class="q-field">独立</div></div>
+        <p>事象Aと事象Bが独立で、P(A)=0.4、P(B)=0.5のとき、P(A∩B)として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 0.1</div><div class="choice">B. 0.2</div><div class="choice">C. 0.4</div><div class="choice">D. 0.9</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 0.2</strong><br>独立なら P(A∩B)=P(A)P(B)。0.4×0.5=0.2です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題19</div><div class="q-field">期待値</div></div>
+        <p>1, 2, 3 の値をそれぞれ確率1/3でとる確率変数Xの期待値として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 1</div><div class="choice">B. 2</div><div class="choice">C. 3</div><div class="choice">D. 6</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 2</strong><br>期待値は 1×1/3 + 2×1/3 + 3×1/3 = 6/3 = 2です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題20</div><div class="q-field">二項分布</div></div>
+        <p>成功確率0.2の試行を5回行うとき、成功回数Xが従う分布として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 正規分布</div><div class="choice">B. 二項分布</div><div class="choice">C. t分布</div><div class="choice">D. カイ二乗分布</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 二項分布</strong><br>成功・失敗の2通りの試行を同じ条件で繰り返すとき、成功回数は二項分布で考えます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題21</div><div class="q-field">二項分布</div></div>
+        <p>成功確率0.5の試行を4回行うとき、ちょうど1回成功する確率として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 1/16</div><div class="choice">B. 2/16</div><div class="choice">C. 4/16</div><div class="choice">D. 8/16</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 4/16</strong><br>4回中1回成功する並び方は4通り。各確率は0.5⁴=1/16なので、4/16です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題22</div><div class="q-field">正規分布</div></div>
+        <p>正規分布の説明として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 左右対称の山型の分布</div><div class="choice">B. 必ず0から1の値だけをとる分布</div><div class="choice">C. 成功・失敗だけを扱う分布</div><div class="choice">D. カテゴリの数を数える分布</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 左右対称の山型の分布</strong><br>正規分布は平均を中心に左右対称の山型になります。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題23</div><div class="q-field">標準正規分布</div></div>
+        <p>標準正規分布の平均と標準偏差の組み合わせとして正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 平均0、標準偏差1</div><div class="choice">B. 平均1、標準偏差0</div><div class="choice">C. 平均50、標準偏差10</div><div class="choice">D. 平均100、標準偏差15</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 平均0、標準偏差1</strong><br>標準化した後の分布は、平均0、標準偏差1の標準正規分布で考えます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題24</div><div class="q-field">正規分布・標準化</div></div>
+        <p>平均100、標準偏差15の正規分布で、値130のz値として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 1</div><div class="choice">B. 2</div><div class="choice">C. 3</div><div class="choice">D. 15</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 2</strong><br>z=(130−100)÷15=30÷15=2です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題25</div><div class="q-field">標準誤差</div></div>
+        <p>標準偏差が20、標本サイズが100のとき、標準誤差として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 0.2</div><div class="choice">B. 2</div><div class="choice">C. 10</div><div class="choice">D. 20</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 2</strong><br>標準誤差は 標準偏差÷√n。20÷√100=20÷10=2です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題26</div><div class="q-field">標準誤差</div></div>
+        <p>標本サイズを大きくすると、標準誤差は一般にどうなるか。</p>
+        <div class="choices"><div class="choice">A. 大きくなる</div><div class="choice">B. 小さくなる</div><div class="choice">C. 必ず0になる</div><div class="choice">D. 変わらない</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 小さくなる</strong><br>標準誤差は標準偏差÷√nなので、nが大きくなると小さくなります。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題27</div><div class="q-field">信頼区間</div></div>
+        <p>95%信頼区間が広くなる要因として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 標準誤差が大きくなる</div><div class="choice">B. 標準誤差が小さくなる</div><div class="choice">C. 標本サイズが大きくなる</div><div class="choice">D. ばらつきがなくなる</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 標準誤差が大きくなる</strong><br>信頼区間は 推定値±1.96×標準誤差。標準誤差が大きいほど幅は広くなります。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題28</div><div class="q-field">信頼区間</div></div>
+        <p>標本平均80、標準誤差3のとき、母平均の95%信頼区間を近似的に求める式として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 80 ± 1.96×3</div><div class="choice">B. 80 ± 3/1.96</div><div class="choice">C. 3 ± 1.96×80</div><div class="choice">D. 80×3 ± 1.96</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 80 ± 1.96×3</strong><br>95%信頼区間は、推定値±1.96×標準誤差で考えます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題29</div><div class="q-field">信頼区間の意味</div></div>
+        <p>信頼区間の説明として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 母平均がありそうな範囲を示す</div><div class="choice">B. 必ず標本平均と同じ値になる</div><div class="choice">C. データの最大値と最小値を示す</div><div class="choice">D. 相関の強さを示す</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 母平均がありそうな範囲を示す</strong><br>信頼区間は、標本から母集団の値を幅をもって推定する考え方です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題30</div><div class="q-field">仮説検定</div></div>
+        <p>仮説検定で最初に立てる「差がない」「効果がない」などの仮説を何というか。</p>
+        <div class="choices"><div class="choice">A. 対立仮説</div><div class="choice">B. 帰無仮説</div><div class="choice">C. 標本仮説</div><div class="choice">D. 回帰仮説</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 帰無仮説</strong><br>検定ではまず「差がない」「効果がない」などの帰無仮説を立て、それを疑えるか判断します。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題31</div><div class="q-field">仮説検定</div></div>
+        <p>p値が0.08、有意水準が5%のとき、判断として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 帰無仮説を棄却する</div><div class="choice">B. 帰無仮説を棄却しない</div><div class="choice">C. 必ず対立仮説が正しい</div><div class="choice">D. 標準偏差を求める</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 帰無仮説を棄却しない</strong><br>p値0.08は有意水準0.05より大きいため、5%水準では棄却しません。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題32</div><div class="q-field">有意水準</div></div>
+        <p>有意水準5%とは、数値で表すとどれか。</p>
+        <div class="choices"><div class="choice">A. 0.005</div><div class="choice">B. 0.05</div><div class="choice">C. 0.5</div><div class="choice">D. 5</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 0.05</strong><br>5%は小数にすると0.05です。p値との大小比較でよく使います。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題33</div><div class="q-field">片側・両側検定</div></div>
+        <p>「平均が50より大きいか」を調べる検定として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 両側検定</div><div class="choice">B. 右片側検定</div><div class="choice">C. 左片側検定</div><div class="choice">D. 相関分析</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 右片側検定</strong><br>「大きいか」を調べるので、右側に偏っているかを見る右片側検定です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題34</div><div class="q-field">片側・両側検定</div></div>
+        <p>「平均が50と異なるか」を調べる検定として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 右片側検定</div><div class="choice">B. 左片側検定</div><div class="choice">C. 両側検定</div><div class="choice">D. カイ二乗検定のみ</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 両側検定</strong><br>「大きい」「小さい」を指定せず、「異なるか」を見るので両側検定です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題35</div><div class="q-field">t検定</div></div>
+        <p>母分散が分からず、標本サイズが小さいとき、母平均の検定で使うことが多い分布はどれか。</p>
+        <div class="choices"><div class="choice">A. t分布</div><div class="choice">B. 二項分布</div><div class="choice">C. 一様分布</div><div class="choice">D. ポアソン分布</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. t分布</strong><br>母分散が分からず標本サイズが小さい場合、母平均の推定や検定ではt分布を使うことが多いです。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題36</div><div class="q-field">カイ二乗検定</div></div>
+        <p>サイコロが公平かどうかを、出た目の回数から調べたい。このとき使う検定として最も近いものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. カイ二乗適合度検定</div><div class="choice">B. 単回帰分析</div><div class="choice">C. 母平均のt検定</div><div class="choice">D. 標準化</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. カイ二乗適合度検定</strong><br>観測された度数が理論上の度数に合っているかを見るときは、適合度検定を使います。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題37</div><div class="q-field">カイ二乗検定</div></div>
+        <p>血液型と好きなスポーツに関連があるかを調べたい。このとき使う検定として最も近いものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. カイ二乗独立性の検定</div><div class="choice">B. 母平均の推定</div><div class="choice">C. 標準偏差の計算</div><div class="choice">D. 偏差値の計算</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. カイ二乗独立性の検定</strong><br>カテゴリ同士に関連があるかを見るときは、独立性の検定を使います。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題38</div><div class="q-field">期待度数</div></div>
+        <p>カイ二乗検定で、理論上期待される各カテゴリの人数や回数を何というか。</p>
+        <div class="choices"><div class="choice">A. 観測度数</div><div class="choice">B. 期待度数</div><div class="choice">C. 標準偏差</div><div class="choice">D. 相関係数</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 期待度数</strong><br>実際に観測された値は観測度数、理論上期待される値は期待度数です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題39</div><div class="q-field">相関</div></div>
+        <p>相関係数が0.95のとき、説明として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 強い正の相関がある</div><div class="choice">B. 強い負の相関がある</div><div class="choice">C. まったく相関がない</div><div class="choice">D. 必ず因果関係がある</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 強い正の相関がある</strong><br>相関係数は1に近いほど強い正の相関を表します。ただし、因果関係があるとは限りません。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題40</div><div class="q-field">相関と因果</div></div>
+        <p>「相関がある」と言えるときの注意点として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 必ず原因と結果の関係がある</div><div class="choice">B. 因果関係があるとは限らない</div><div class="choice">C. 平均が等しいことを示す</div><div class="choice">D. 標準偏差が0である</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 因果関係があるとは限らない</strong><br>相関は一緒に変化する傾向を表しますが、原因と結果までは示しません。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題41</div><div class="q-field">回帰分析</div></div>
+        <p>回帰式 y = 5x − 2 において、傾きとして正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. −2</div><div class="choice">B. 2</div><div class="choice">C. 5</div><div class="choice">D. y</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 5</strong><br>xの係数が傾きです。xが1増えると、yは平均的に5増えると読み取ります。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題42</div><div class="q-field">回帰分析</div></div>
+        <p>回帰式 y = 2x + 10 で、x=4のときの予測値yとして正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 8</div><div class="choice">B. 14</div><div class="choice">C. 18</div><div class="choice">D. 20</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 18</strong><br>y=2×4+10=18です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題43</div><div class="q-field">残差</div></div>
+        <p>実際の値が30、回帰式による予測値が26のとき、残差として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. −4</div><div class="choice">B. 4</div><div class="choice">C. 26</div><div class="choice">D. 30</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 4</strong><br>残差は実際の値−予測値なので、30−26=4です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題44</div><div class="q-field">決定係数</div></div>
+        <p>相関係数が0.8の単回帰で、決定係数として正しいものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 0.16</div><div class="choice">B. 0.4</div><div class="choice">C. 0.64</div><div class="choice">D. 1.6</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：C. 0.64</strong><br>単回帰では決定係数は相関係数の2乗で考えられます。0.8²=0.64です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題45</div><div class="q-field">標本調査</div></div>
+        <p>母集団全体を調べるのではなく、一部を選んで調べる調査を何というか。</p>
+        <div class="choices"><div class="choice">A. 全数調査</div><div class="choice">B. 標本調査</div><div class="choice">C. 回帰調査</div><div class="choice">D. 分散調査</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 標本調査</strong><br>母集団の一部を標本として選び、全体の性質を推測する調査です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題46</div><div class="q-field">無作為抽出</div></div>
+        <p>母集団から偏りが出ないようにランダムに標本を選ぶ方法として最も近いものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 無作為抽出</div><div class="choice">B. 意図的抽出</div><div class="choice">C. 回帰抽出</div><div class="choice">D. 分散抽出</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 無作為抽出</strong><br>偏りを減らすために、ランダムに選ぶ方法です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題47</div><div class="q-field">層化抽出</div></div>
+        <p>学年ごとに層を分け、それぞれの学年からランダムに生徒を選ぶ方法として最も近いものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 層化抽出</div><div class="choice">B. 全数調査</div><div class="choice">C. 単回帰分析</div><div class="choice">D. カイ二乗検定</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 層化抽出</strong><br>母集団を層に分けて、それぞれから標本を取る方法です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題48</div><div class="q-field">バイアス</div></div>
+        <p>調査で特定の意見を持つ人だけが多く回答してしまい、結果が偏ることを何というか。</p>
+        <div class="choices"><div class="choice">A. バイアス</div><div class="choice">B. 標準化</div><div class="choice">C. 決定係数</div><div class="choice">D. 標準誤差</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. バイアス</strong><br>調査やデータの取り方によって結果が偏ることをバイアスといいます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題49</div><div class="q-field">実験計画</div></div>
+        <p>薬の効果を調べる実験で、薬を飲まない比較対象のグループを何というか。</p>
+        <div class="choices"><div class="choice">A. 対照群</div><div class="choice">B. 標本群</div><div class="choice">C. 分散群</div><div class="choice">D. 回帰群</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 対照群</strong><br>効果を比較するために、処置を受けない、または通常条件のグループを対照群といいます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題50</div><div class="q-field">総合判断</div></div>
+        <p>「ある新しい勉強法で平均点が上がったと言えるか」を調べたい。最も関係が深い考え方を選びなさい。</p>
+        <div class="choices"><div class="choice">A. 仮説検定</div><div class="choice">B. 箱ひげ図だけ</div><div class="choice">C. 相関係数だけ</div><div class="choice">D. 全数調査だけ</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 仮説検定</strong><br>平均点が上がったと言えるかを判断するには、偶然の差なのか、有意な差なのかを検定で考えます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題51</div><div class="q-field">母集団と標本</div></div>
+        <p>全国の高校生の平均学習時間を知りたいとき、全国の高校生全体を何というか。</p>
+        <div class="choices"><div class="choice">A. 標本</div><div class="choice">B. 母集団</div><div class="choice">C. 残差</div><div class="choice">D. 度数</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 母集団</strong><br>調べたい対象全体を母集団といいます。この場合は全国の高校生全体です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題52</div><div class="q-field">標本</div></div>
+        <p>全国の高校生の中から500人を選んで調査した。この500人を何というか。</p>
+        <div class="choices"><div class="choice">A. 母集団</div><div class="choice">B. 標本</div><div class="choice">C. 対照群</div><div class="choice">D. 期待度数</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 標本</strong><br>母集団から実際に選んで調べる一部のデータを標本といいます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題53</div><div class="q-field">母平均</div></div>
+        <p>母集団全体の平均を何というか。</p>
+        <div class="choices"><div class="choice">A. 標本平均</div><div class="choice">B. 母平均</div><div class="choice">C. 中央値</div><div class="choice">D. 最頻値</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 母平均</strong><br>母集団全体の平均を母平均といいます。標本から推定したい値です。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題54</div><div class="q-field">標本平均</div></div>
+        <p>標本から計算した平均を何というか。</p>
+        <div class="choices"><div class="choice">A. 母平均</div><div class="choice">B. 標本平均</div><div class="choice">C. 母分散</div><div class="choice">D. 期待度数</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 標本平均</strong><br>選ばれた標本から計算した平均を標本平均といいます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題55</div><div class="q-field">不偏推定量</div></div>
+        <p>何度も標本を取って推定したとき、平均的に真の値に一致するような推定量を何というか。</p>
+        <div class="choices"><div class="choice">A. 不偏推定量</div><div class="choice">B. 残差</div><div class="choice">C. 相関係数</div><div class="choice">D. 棄却域</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 不偏推定量</strong><br>平均的に真の値からズレない推定量を不偏推定量といいます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題56</div><div class="q-field">不偏分散</div></div>
+        <p>標本から母分散を推定するとき、通常nではなく何で割る分散を使うか。</p>
+        <div class="choices"><div class="choice">A. n−1</div><div class="choice">B. n+1</div><div class="choice">C. 2n</div><div class="choice">D. √n</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. n−1</strong><br>母分散を推定するときは、平均との差の2乗和をn−1で割る不偏分散を使います。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題57</div><div class="q-field">母比率</div></div>
+        <p>ある学校全体でスマホを持っている生徒の割合を知りたい。この割合は何にあたるか。</p>
+        <div class="choices"><div class="choice">A. 母平均</div><div class="choice">B. 母比率</div><div class="choice">C. 標準偏差</div><div class="choice">D. 残差</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：B. 母比率</strong><br>母集団全体における割合を母比率といいます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題58</div><div class="q-field">母比率の推定</div></div>
+        <p>標本比率が0.4、標本サイズが100のとき、母比率の標準誤差の形として最も近いものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. √{0.4×0.6/100}</div><div class="choice">B. 0.4×100</div><div class="choice">C. 100÷0.4</div><div class="choice">D. √100÷0.4</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. √{0.4×0.6/100}</strong><br>母比率の推定では、標本比率pを使って √{p(1−p)/n} の形で標準誤差を考えます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題59</div><div class="q-field">中心極限定理</div></div>
+        <p>標本サイズが大きいとき、標本平均の分布が近づく分布として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 正規分布</div><div class="choice">B. 常に二項分布</div><div class="choice">C. 常に一様分布</div><div class="choice">D. 度数分布表</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 正規分布</strong><br>中心極限定理により、条件が整えば標本平均の分布は正規分布に近づきます。</div>
+      </div>
+
+      <div class="question">
+        <div class="q-head"><div class="q-num">問題60</div><div class="q-field">標本サイズ</div></div>
+        <p>推定の精度を高め、信頼区間を狭くするために有効な方法として最も適切なものを選びなさい。</p>
+        <div class="choices"><div class="choice">A. 標本サイズを大きくする</div><div class="choice">B. 標本サイズを小さくする</div><div class="choice">C. データを見ない</div><div class="choice">D. 必ず相関係数を使う</div></div>
+        <button class="answer-toggle" onclick="toggleAnswer(this)">答えを見る</button>
+        <div class="answer"><strong>答え：A. 標本サイズを大きくする</strong><br>標本サイズが大きいほど標準誤差が小さくなり、信頼区間は狭くなりやすいです。</div>
+      </div>
+
+    </section>
+
+    <section id="final">
+      <h2 class="section-title"><span class="icon">6</span>試験直前チェック</h2>
+      <div class="grid">
+        <div class="card span-6">
+          <h3>本番前に確認すること</h3>
+          <ul class="checklist">
+            <li>p値と有意水準の大小で棄却判断ができる</li>
+            <li>正規分布・t分布・カイ二乗分布の使い分けが分かる</li>
+            <li>信頼区間の形を覚えている</li>
+            <li>相関係数と決定係数の意味を説明できる</li>
+            <li>90分で35問を解く時間感覚がある</li>
+          </ul>
+        </div>
+        <div class="card span-6">
+          <h3>間違えた問題の見直し方</h3>
+          <table>
+            <thead><tr><th>原因</th><th>対策</th></tr></thead>
+            <tbody>
+              <tr><td>公式を知らない</td><td>公式カードに追加して毎日確認</td></tr>
+              <tr><td>使う公式を選べない</td><td>問題文のキーワードをチェック</td></tr>
+              <tr><td>計算ミス</td><td>途中式を1行ずつ書いて確認</td></tr>
+              <tr><td>時間不足</td><td>難問を飛ばす練習をする</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculum" class="curriculum-page">
+      <div class="curriculum-hero">
+        <div class="eyebrow" style="background:#fff; color:#2459c9; border-color:#dce6f8;">家庭教師用</div>
+        <h2>全4回 指導カリキュラム</h2>
+        <p>数Bの「統計的な推測」をまだ学習していない前提で、統計検定2級に出やすい分野を短期集中で確認します。全4回では全範囲を一から深く進めるのではなく、頻出分野の考え方・公式の使い方・問題の見分け方を優先して整理します。</p>
+      </div>
+
+      <div class="grid">
+        <div class="card span-6 lesson-card">
+          <div class="lesson-label">第1回</div>
+          <h3>データ分析・確率分布の確認</h3>
+          <p><strong>目的：</strong>推定・検定に入る前の土台を確認し、基本問題で落とさない状態を作る。</p>
+          <ul class="lesson-list">
+            <li>平均・分散・標準偏差</li>
+            <li>標準化とz値</li>
+            <li>確率の基本</li>
+            <li>二項分布・正規分布の入口</li>
+          </ul>
+          <div class="teacher-note">家庭教師の役割：公式を教えるだけでなく、「この数字は何を表しているか」を説明する。</div>
+          <div class="homework-box">宿題：平均・分散・標準化・二項分布の基本問題を解く。</div>
+        </div>
+
+        <div class="card span-6 lesson-card">
+          <div class="lesson-label">第2回</div>
+          <h3>推定・信頼区間</h3>
+          <p><strong>目的：</strong>未習の数B内容である推定を、統計検定2級で使える形にする。</p>
+          <ul class="lesson-list">
+            <li>標本平均と標本比率</li>
+            <li>標準偏差と標準誤差の違い</li>
+            <li>母平均の信頼区間</li>
+            <li>母比率の信頼区間</li>
+            <li>正規分布表の読み取り</li>
+          </ul>
+          <div class="teacher-note">家庭教師の役割：「標準偏差」と「標準誤差」の違いを重点的に整理する。</div>
+          <div class="homework-box">宿題：信頼区間の問題、標準誤差を使う問題、正規分布の標準化問題。</div>
+        </div>
+
+        <div class="card span-6 lesson-card">
+          <div class="lesson-label">第3回</div>
+          <h3>仮説検定・p値・検定の判断</h3>
+          <p><strong>目的：</strong>検定問題で、棄却するかどうかを判断できるようにする。</p>
+          <ul class="lesson-list">
+            <li>帰無仮説・対立仮説</li>
+            <li>有意水準とp値</li>
+            <li>片側検定・両側検定</li>
+            <li>母平均・母比率の検定</li>
+            <li>t検定の基本</li>
+          </ul>
+          <div class="teacher-note">家庭教師の役割：「p値 ＜ 有意水準なら棄却」を問題文の中で使えるようにする。</div>
+          <div class="homework-box">宿題：仮説検定の判断問題、p値の読み取り問題、片側・両側の確認。</div>
+        </div>
+
+        <div class="card span-6 lesson-card">
+          <div class="lesson-label">第4回</div>
+          <h3>回帰・カイ二乗＋過去問対策</h3>
+          <p><strong>目的：</strong>数B未習でも出題されやすい内容を最低限押さえ、本番の得点戦略を作る。</p>
+          <ul class="lesson-list">
+            <li>相関係数・回帰分析</li>
+            <li>決定係数・残差</li>
+            <li>カイ二乗検定</li>
+            <li>標本調査・実験計画</li>
+            <li>過去問の間違い直しと時間配分</li>
+          </ul>
+          <div class="teacher-note">家庭教師の役割：未習範囲を深追いしすぎず、取れる問題を確実に取る作戦を立てる。</div>
+          <div class="homework-box">宿題：過去問または模擬問題を90分で解き、間違えた問題を分類する。</div>
+        </div>
+
+        <div class="card span-12">
+          <h3>全4回での指導方針</h3>
+          <table>
+            <thead>
+              <tr><th>回</th><th>メインテーマ</th><th>家庭教師が見るポイント</th><th>自習でやること</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>第1回</td><td>基礎・確率分布</td><td>平均・分散・標準化を使えるか</td><td>基本計算を反復する</td></tr>
+              <tr><td>第2回</td><td>推定・信頼区間</td><td>標準誤差と信頼区間を理解できているか</td><td>信頼区間の問題を解く</td></tr>
+              <tr><td>第3回</td><td>仮説検定</td><td>p値・有意水準・棄却判断ができるか</td><td>検定の判断問題を解く</td></tr>
+              <tr><td>第4回</td><td>回帰・カイ二乗・過去問</td><td>未習範囲の最低限整理と時間配分</td><td>過去問を時間内に解く</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-message">
+      <h2>1か月で大事なのは、完璧よりも得点力。</h2>
+      <p>推定・検定・確率分布・回帰分析を中心に、毎日少しずつ問題を解いて、60点突破を目指しましょう。</p>
+    </div>
+  </main>
+
+  <div class="modal-bg" id="exampleModalBg" onclick="closeExampleByBg(event)">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" onclick="closeExample()" aria-label="閉じる">×</button>
+      <h3 id="modalTitle">例題・考え方</h3>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer(button) {
+      const answer = button.nextElementSibling;
+      answer.classList.toggle('show');
+      button.textContent = answer.classList.contains('show') ? '答えを隠す' : '答えを見る';
+    }
+
+    const examples = {
+      variance: {
+        title: '分散：平均からのズレの大きさを見る',
+        html: `
+          <div class="modal-block"><strong>例題</strong><br>データ 2, 4, 6 の分散を求めなさい。</div>
+          <div class="modal-block"><strong>考え方</strong>
+            <ol class="modal-step">
+              <li>まず平均を求める。平均は (2+4+6)÷3 = 4。</li>
+              <li>それぞれの平均との差を求める。2−4=-2、4−4=0、6−4=2。</li>
+              <li>差を2乗する。4、0、4。</li>
+              <li>平均する。分散は (4+0+4)÷3 = 8/3。</li>
+            </ol>
+          </div>
+          <div class="modal-block"><strong>ポイント</strong><br>平均との差をそのまま足すと0になりやすいので、2乗してから平均します。</div>`
+      },
+      sd: {
+        title: '標準偏差：ばらつきを元の単位で見る',
+        html: `
+          <div class="modal-block"><strong>例題</strong><br>分散が25のとき、標準偏差を求めなさい。</div>
+          <div class="modal-block"><strong>考え方</strong><br>標準偏差は分散の平方根なので、√25 = 5。</div>
+          <div class="modal-block"><strong>ポイント</strong><br>分散は2乗された値なので、元の単位に戻すために平方根を取ります。</div>`
+      },
+      zscore: {
+        title: '標準化：平均から何個分離れているかを見る',
+        html: `
+          <div class="modal-block"><strong>例題</strong><br>平均50、標準偏差10のテストで70点を取った。z値を求めなさい。</div>
+          <div class="modal-block"><strong>考え方</strong><br>z = (70−50)÷10 = 2。</div>
+          <div class="modal-block"><strong>ポイント</strong><br>z=2は、平均より標準偏差2個分高いという意味です。偏差値の考え方にもつながります。</div>`
+      },
+      se: {
+        title: '標準誤差：標本平均のブレを見る',
+        html: `
+          <div class="modal-block"><strong>例題</strong><br>母集団の標準偏差が12、標本サイズが36のとき、標準誤差を求めなさい。</div>
+          <div class="modal-block"><strong>考え方</strong><br>標準誤差 = 標準偏差 ÷ √n = 12 ÷ √36 = 12 ÷ 6 = 2。</div>
+          <div class="modal-block"><strong>ポイント</strong><br>標本サイズが大きくなるほど、標本平均のブレは小さくなります。</div>`
+      },
+      ci: {
+        title: '95%信頼区間：推定値の幅を見る',
+        html: `
+          <div class="modal-block"><strong>例題</strong><br>標本平均100、標準誤差5のとき、母平均の95%信頼区間を近似的に求めなさい。</div>
+          <div class="modal-block"><strong>考え方</strong><br>95%信頼区間 = 100 ± 1.96×5 = 100 ± 9.8。つまり、90.2〜109.8。</div>
+          <div class="modal-block"><strong>ポイント</strong><br>信頼区間は「この範囲に母平均がありそう」と考えるための幅です。推定値だけでなく、どれくらい誤差がありそうかも見ます。</div>`
+      },
+      pvalue: {
+        title: 'p値：帰無仮説を疑うか判断する',
+        html: `
+          <div class="modal-block"><strong>例題</strong><br>p値が0.03、有意水準が5%のとき、帰無仮説を棄却できるか。</div>
+          <div class="modal-block"><strong>考え方</strong><br>有意水準5%は0.05。p値0.03は0.05より小さいので、帰無仮説を棄却します。</div>
+          <div class="modal-block"><strong>ポイント</strong><br>p値が小さいほど、「帰無仮説が正しいとしたら、この結果はかなり珍しい」と考えます。</div>`
+      },
+      r2: {
+        title: '決定係数：回帰式の説明力を見る',
+        html: `
+          <div class="modal-block"><strong>例題</strong><br>決定係数が0.64のとき、何%の変動を説明しているといえるか。</div>
+          <div class="modal-block"><strong>考え方</strong><br>0.64 = 64%。目的変数の変動の64%を、回帰式で説明していると考えます。</div>
+          <div class="modal-block"><strong>ポイント</strong><br>決定係数が高いほど説明力は高いですが、因果関係があるとは限りません。</div>`
+      },
+      corr: {
+        title: '相関係数：2つの関係の強さと向きを見る',
+        html: `
+          <div class="modal-block"><strong>例題</strong><br>相関係数が−0.9のとき、どのような関係といえるか。</div>
+          <div class="modal-block"><strong>考え方</strong><br>−1に近いので、強い負の相関があるといえます。一方が増えると、もう一方が減る傾向があります。</div>
+          <div class="modal-block"><strong>ポイント</strong><br>相関は関係の強さを表しますが、原因と結果を証明するものではありません。</div>`
+      }
+    };
+
+    function openExample(key) {
+      const data = examples[key];
+      if (!data) return;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalContent').innerHTML = data.html;
+      document.getElementById('exampleModalBg').classList.add('show');
+    }
+
+    function closeExample() {
+      document.getElementById('exampleModalBg').classList.remove('show');
+    }
+
+    function closeExampleByBg(event) {
+      if (event.target.id === 'exampleModalBg') {
+        closeExample();
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') closeExample();
+    });
+  </script>
+</body>
+</html>
